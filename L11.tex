@@ -1,0 +1,63 @@
+\documentclass{article}
+\title{Homework 11}
+\author{Zac Yauney}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+
+% Custom commands and operators
+\newcommand\range{\mathscr{R}}
+\newcommand\n{\mathcal{N}}
+\newcommand\F{\mathbb{F}}
+\newcommand\C{\mathbb{C}}
+\newcommand\Z{\mathbb{Z}}
+\newcommand\E{\mathbb{E}}
+\newcommand\Q{\mathbb{Q}}
+\newcommand\R{\mathbb{R}}
+\newcommand\bo{\mathcal{O}}
+\newcommand\ip[2]{\langle #1,#2\rangle}
+\newcommand\norm[1]{||#1||}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\Skew}{Skew}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\spn}{span}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\argmin}{argmin}
+\DeclareMathOperator{\argmax}{argmax}
+
+
+\begin{document}
+\maketitle
+\paragraph{1}
+The text shows that $A^\dagger$ has the SVD $A^\dagger=V\Sigma_{A}^{-1} U^*$. Compare this to $A_1^{-1}=V \Sigma_{A_1}^{-1}U^*$. The unitary matrices all have 2-norm of 1, and the 2-norm is equivalent to the largest singular value, so we have
+\[
+	||A^\dagger||_2 = \frac{1}{\sigma_\text{min}(A)}
+\]
+\[
+	||A_1^{-1}||_2 = \frac{1}{\sigma_\text{min}(A_1)}
+\]
+Then we only need show that $\sigma_\text{min}(A) \ge \sigma_\text{min}(A_1)$. This follows from the fact that the singular values for $A$ are the square roots of
+\[
+A^*A = \begin{bmatrix}
+	A_1 & A_2
+\end{bmatrix}
+\begin{bmatrix}
+A_1 \\
+A_2
+\end{bmatrix}
+= A_1^*A_1+A_2^*A_2 \ge A_1^*A_1
+\]
+which is greater than the singular values for $A_1$, the square roots of the eigenvalues of
+\[
+A_1^*A_1
+\].
+
+This shows that $A$ has larger singular values, and thus $A^\dagger$ has a smaller 2-norm than $A_1^{-1}$.
+
+
+
+\end{document}
